@@ -1,3 +1,47 @@
+*.safetensors
+*.pt
+__pycache__/
+.DS_Store
+# Ignore virtual environments
+venv*/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# macOS files
+.DS_Store
+
+# Model files
+*.safetensors
+*.pt
+*.bin
+
+# Streamlit files
+.streamlit/
+# Ignore virtual environments
+venv*/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# macOS files
+.DS_Store
+
+# Model files
+*.safetensors
+*.pt
+*.bin
+
+# Streamlit files
+.streamlit/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
