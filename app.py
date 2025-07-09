@@ -10,8 +10,10 @@ def load_custom_css(css_file):
     if os.path.exists(css_file):
         with open(css_file, "r") as f:
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+            print("✅ CSS loaded successfully")
     else:
         st.warning(f"⚠️ CSS file '{css_file}' not found!")
+        print(f"❌ CSS file '{css_file}' not found!")
 
 load_custom_css("streamlit_theme.css")
 
