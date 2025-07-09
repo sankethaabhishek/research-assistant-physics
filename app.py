@@ -18,6 +18,7 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("🚀 Built by Sanketha Abhishek")
     st.markdown("📝 Works best with clean, text-based PDFs.")
+    st.caption("🧪 Styling provided by a custom academic CSS theme.")
 
 # --- Main Title ---
 st.title("📄 Research Paper Summarizer")
