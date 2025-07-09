@@ -1,21 +1,8 @@
 import streamlit as st
-import os
 from utils.parser import extract_text_from_pdf
 from utils.section_splitter import split_into_sections
 from utils.summarizer import summarize_text, AVAILABLE_MODELS
 from utils.qa import answer_question
-
-# --- Load Custom CSS ---
-def load_custom_css(css_file):
-    if os.path.exists(css_file):
-        with open(css_file, "r") as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-            print("✅ CSS loaded successfully")
-    else:
-        st.warning(f"⚠️ CSS file '{css_file}' not found!")
-        print(f"❌ CSS file '{css_file}' not found!")
-
-load_custom_css("streamlit_theme.css")
 
 # --- Page Configuration ---
 st.set_page_config(page_title="Physics Research Assistant", layout="wide")
@@ -37,17 +24,14 @@ uploaded_file = st.file_uploader("📁 Upload a PDF", type=["pdf"])
 
 if uploaded_file:
     with st.spinner("⏳ Extracting and summarizing..."):
-        # Save uploaded file temporarily
         with open("temp.pdf", "wb") as f:
             f.write(uploaded_file.read())
-
         full_text = extract_text_from_pdf("temp.pdf")
         sections = split_into_sections(full_text)
 
     st.success("✅ Summary ready!")
 
     summaries = {}
-
     for title, content in sections.items():
         with st.expander(f"📌 {title.upper()}"):
             summary = summarize_text(content, model_name=selected_model)
@@ -83,3 +67,4 @@ if question:
         answer, score = answer_question(question, combined_text)
     st.success(f"**Answer:** {answer}")
     st.caption(f"Confidence: {score:.2f}")
+
