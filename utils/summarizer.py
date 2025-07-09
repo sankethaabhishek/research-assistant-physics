@@ -2,8 +2,7 @@ from transformers import pipeline
 
 # Dictionary of available models
 AVAILABLE_MODELS = {
-    "T5 (Small & Fast)": "t5-small",
-    "BART (Accurate, Larger)": "facebook/bart-large-cnn"
+    "BART (facebook/bart-base)": "facebook/bart-base"
 }
 
 def summarize_text(text, model_name="t5-small"):
