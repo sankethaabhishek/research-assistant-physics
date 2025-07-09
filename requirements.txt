@@ -1,0 +1,8 @@
+streamlit
+transformers
+torch
+sentencepiece 
+PyMuPDF 
+
+For M1/M2 Mac:
+protobuf<4
