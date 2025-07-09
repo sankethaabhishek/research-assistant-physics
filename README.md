@@ -50,9 +50,12 @@ pip install -r requirements.txt
 # Run the app
 streamlit run app.py
 
+---
+
 ## 🧪 Limitations
 ❌ Scanned image-based PDFs are not supported
 🔣 Complex LaTeX equations may reduce summary accuracy
 💬 QA performance depends on model context limitations
 
+----
 ## Made by Sanketha Abhishek
